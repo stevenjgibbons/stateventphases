@@ -1,8 +1,52 @@
 # stateventphases
 Two little python programs for listing the phase arrivals for an event and station location
 
-Very crude!
+(1) **stateventphases.py** simply returns lines of ASCII text containing two columns: (1) the phase name and (2) the number of seconds after the origin time at which you would expect to observe the phase.  
 
+The calling sequence is  
+
+```
+python stateventphases.py --evlat $evlat --evlon $evlon --evdep $evdep --stlat $stlat --stlon $stlon
+```
+
+An example for the station IU.CTAO is given in the shell script *run_CTAO.sh*  
+
+```
+#!/bin/sh
+# Set event latitude, longitude, event depth (in km), station latitude and longitude
+evlat=-26.044
+evlon=178.381
+evdep=600.0
+stlat=-20.08765
+stlon=146.24998
+python stateventphases.py --evlat $evlat --evlon $evlon --evdep $evdep --stlat $stlat --stlon $stlon
+```
+
+The output from this particular run looks like  
+```
+P             371.768
+PP            428.772
+PP            428.772
+PP            429.122
+PP            439.697
+PP            439.828
+PcP           553.006
+S             671.794
+PS            677.519
+...
+PKPPKP       2524.304
+SKIKSSKIKS     3262.895
+```
+
+(2) **stateventabstimes.py** is almost identical but takes an additional argument, *origt*  
+
+```
+python stateventabstimes.py --evlat $evlat --evlon $evlon --evdep $evdep --stlat $stlat --stlon $stlon --origt $origt
+```
+
+so a complete call could look a little like:
+
+```
 #!/bin/sh  
 evlat=-26.044  
 evlon=178.381  
@@ -10,8 +54,12 @@ evdep=600.0
 stlat=-20.08765  
 stlon=146.24998  
 origt=2022-11-09T09:51:04  
-python stateventabstimes.py --evlat $evlat --evlon $evlon --evdep $evdep --stlat $stlat --stlon $stlon --origt $origt  
+python stateventabstimes.py --evlat $evlat --evlon $evlon --evdep $evdep --stlat $stlat --stlon $stlon --origt $origt
+```
 
+(as found in the shell script *run_CTAO_origt.sh*). This gives the output
+
+```
 P             371.768   2022-11-09T09:57:15.768373Z  
 PP            428.772   2022-11-09T09:58:12.771872Z  
 PP            428.772   2022-11-09T09:58:12.772194Z  
@@ -27,4 +75,8 @@ SP            696.017   2022-11-09T10:02:40.017319Z
 PS            696.049   2022-11-09T10:02:40.048516Z  
 SP            696.049   2022-11-09T10:02:40.048516Z  
 SS            764.297   2022-11-09T10:03:48.296596Z  
-PcS           776.472   2022-11-09T10:04:00.472446Z  
+PcS           776.472   2022-11-09T10:04:00.472446Z
+```
+
+Both programs are based upon the **obspy** software: *https://docs.obspy.org/* and *https://github.com/obspy/obspy*  
+
