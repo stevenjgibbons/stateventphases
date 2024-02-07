@@ -5,6 +5,8 @@ Release v1.0.0 is permanently stored on Zenodo with DOI 10.5281/zenodo.10629194
 
 https://doi.org/10.5281/zenodo.10629194    
 
+[![SQAaaS badge](https://github.com/EOSC-synergy/SQAaaS/raw/master/badges/badges_150x116/badge_software_bronze.png)](https://api.eu.badgr.io/public/assertions/PvagjGy9S-Sl7UVUj8i0vQ "SQAaaS bronze badge achieved")  
+[![SQAaaS badge shields.io](https://img.shields.io/badge/sqaaas%20software-bronze-e6ae77)](https://api.eu.badgr.io/public/assertions/PvagjGy9S-Sl7UVUj8i0vQ "SQAaaS bronze badge achieved")  
 
 
 Two little python programs for listing the phase arrivals for an event and station location
