@@ -1,4 +1,12 @@
-# stateventphases
+# stateventphases  
+
+Release v1.0.0 is permanently stored on Zenodo with DOI 10.5281/zenodo.10629194  
+[![DOI](https://zenodo.org/badge/564022209.svg)](https://zenodo.org/doi/10.5281/zenodo.10629194)  
+
+https://doi.org/10.5281/zenodo.10629194    
+
+
+
 Two little python programs for listing the phase arrivals for an event and station location
 
 (1) **stateventphases.py** simply returns lines of ASCII text containing two columns: (1) the phase name and (2) the number of seconds after the origin time at which you would expect to observe the phase.  
