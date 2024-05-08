@@ -90,3 +90,11 @@ PcS           776.472   2022-11-09T10:04:00.472446Z
 
 Both programs are based upon the **obspy** software: *https://docs.obspy.org/* and *https://github.com/obspy/obspy*  
 
+As of May 8, 2024, a third program is added: A little python script to take an event origin 
+and a station network, station, location, and channel and phase and it will download and plot 
+the signal and write out a file with a predicted time and the station and event coordinates.
+
+```
+usage: orig_get_IRIS_wf.py [-h] --evlat EVLAT --evlon EVLON [--evdep EVDEP] --network NETWORK --station STATION
+                           --location LOCATION --channel CHANNEL --origt ORIGT [--phase PHASE]
+```
